@@ -1,0 +1,314 @@
+[
+  {
+    "node_id": "TH_STATION",
+    "name": "Thane Railway Station",
+    "description": "Major central rail terminal & transit interchange",
+    "lat": 19.1846,
+    "lon": 72.971,
+    "type": "junction"
+  },
+  {
+    "node_id": "NAUPADA",
+    "name": "Naupada Junction",
+    "description": "Dense commercial locality, connects Gokhale Rd",
+    "lat": 19.1865,
+    "lon": 72.9758,
+    "type": "junction"
+  },
+  {
+    "node_id": "VANDANA_CINEMA",
+    "name": "Vandana ST Depot",
+    "description": "Documented chronic depression hotspot near Kopri",
+    "lat": 19.187,
+    "lon": 72.969,
+    "type": "junction"
+  },
+  {
+    "node_id": "KOPRI",
+    "name": "Kopri Colony",
+    "description": "Lowland residential sector near creek margin",
+    "lat": 19.177,
+    "lon": 72.972,
+    "type": "junction"
+  },
+  {
+    "node_id": "MULUND_TOLL",
+    "name": "Anand Nagar / Mulund Toll",
+    "description": "Southern entry gateway from Mumbai into Thane (EEH)",
+    "lat": 19.176,
+    "lon": 72.968,
+    "type": "junction"
+  },
+  {
+    "node_id": "WAGLE_ESTATE",
+    "name": "Wagle Industrial Estate",
+    "description": "Industrial & IT hub, elevated plateau",
+    "lat": 19.1985,
+    "lon": 72.951,
+    "type": "junction"
+  },
+  {
+    "node_id": "WAGLE_CHECK_NAKA",
+    "name": "Modella Check Naka",
+    "description": "LBS Marg entry from Mulund",
+    "lat": 19.182,
+    "lon": 72.948,
+    "type": "junction"
+  },
+  {
+    "node_id": "TEEN_HATH_NAKA",
+    "name": "Teen Hath Naka (At-Grade)",
+    "description": "Major 8-arm arterial junction; service lanes flood",
+    "lat": 19.1884,
+    "lon": 72.9636,
+    "type": "junction"
+  },
+  {
+    "node_id": "TEEN_HATH_FLYOVR",
+    "name": "Teen Hath Naka Flyover",
+    "description": "Elevated bypass over flooded junction",
+    "lat": 19.1884,
+    "lon": 72.9636,
+    "type": "junction"
+  },
+  {
+    "node_id": "PANCHPAKHADI_TMC",
+    "name": "TMC Headquarters Panchpakhadi",
+    "description": "Thane Municipal Corporation HQ & civic center",
+    "lat": 19.197,
+    "lon": 72.967,
+    "type": "junction"
+  },
+  {
+    "node_id": "NITIN_JUNCTION",
+    "name": "Nitin Company Junction",
+    "description": "EEH / Panchpakhadi cross connection",
+    "lat": 19.1995,
+    "lon": 72.9645,
+    "type": "junction"
+  },
+  {
+    "node_id": "NITIN_FLYOVR",
+    "name": "Nitin Company Flyover",
+    "description": "Elevated EEH express deck",
+    "lat": 19.1995,
+    "lon": 72.9645,
+    "type": "junction"
+  },
+  {
+    "node_id": "CADBURY_JUNCTION",
+    "name": "Cadbury Junction",
+    "description": "Key junction linking EEH to Pokhran Road No. 1",
+    "lat": 19.2046,
+    "lon": 72.9688,
+    "type": "junction"
+  },
+  {
+    "node_id": "MAJIWADA_JUNCTION",
+    "name": "Majiwada Golden Dyes (At-Grade)",
+    "description": "Primary northern hub; low-lying underpasses pool water",
+    "lat": 19.213,
+    "lon": 72.9785,
+    "type": "junction"
+  },
+  {
+    "node_id": "MAJIWADA_FLYOVR",
+    "name": "Majiwada Multi-Tier Flyover",
+    "description": "Elevated arterial connector to Ghodbunder Road",
+    "lat": 19.213,
+    "lon": 72.9785,
+    "type": "junction"
+  },
+  {
+    "node_id": "VARTAK_NAGAR",
+    "name": "Vartak Nagar Naka",
+    "description": "Residential center along Pokhran Road 1",
+    "lat": 19.2155,
+    "lon": 72.9627,
+    "type": "junction"
+  },
+  {
+    "node_id": "UPVAN_LAKE",
+    "name": "Upvan Lake",
+    "description": "Waterfront recreational area at base of Yeoor Hills",
+    "lat": 19.2214,
+    "lon": 72.956,
+    "type": "junction"
+  },
+  {
+    "node_id": "KAPURBAWDI",
+    "name": "Kapurbawdi Junction",
+    "description": "Bifurcation of Ghodbunder Road and Pokhran Road 2",
+    "lat": 19.2143,
+    "lon": 72.9778,
+    "type": "junction"
+  },
+  {
+    "node_id": "MANPADA",
+    "name": "Manpada Junction",
+    "description": "High-density arterial corridor on Ghodbunder Rd",
+    "lat": 19.2314,
+    "lon": 72.9738,
+    "type": "junction"
+  },
+  {
+    "node_id": "BRAHMAND",
+    "name": "Brahmand Junction",
+    "description": "Residential township junction on Ghodbunder Rd",
+    "lat": 19.243,
+    "lon": 72.972,
+    "type": "junction"
+  },
+  {
+    "node_id": "PATLIPADA",
+    "name": "Patlipada Junction",
+    "description": "Commercial hub near Hiranandani",
+    "lat": 19.249,
+    "lon": 72.97,
+    "type": "junction"
+  },
+  {
+    "node_id": "HIRANANDANI_EST",
+    "name": "Hiranandani Estate Entrance",
+    "description": "Major residential township",
+    "lat": 19.2549,
+    "lon": 72.9821,
+    "type": "junction"
+  },
+  {
+    "node_id": "WAGHBIL",
+    "name": "Waghbil Naka",
+    "description": "Ghodbunder flyover & creek access",
+    "lat": 19.261,
+    "lon": 72.97,
+    "type": "junction"
+  },
+  {
+    "node_id": "KASARVADAVALI",
+    "name": "Kasarvadavali",
+    "description": "Northern transit hub on Ghodbunder Rd",
+    "lat": 19.2704,
+    "lon": 72.9691,
+    "type": "junction"
+  },
+  {
+    "node_id": "OVALA",
+    "name": "Ovala / Anand Nagar",
+    "description": "Foothill suburban sector",
+    "lat": 19.278,
+    "lon": 72.963,
+    "type": "junction"
+  },
+  {
+    "node_id": "GAIMUKH",
+    "name": "Gaimukh Creek Threshold",
+    "description": "Northern boundary of TMC; runoff from Yeoor ridge",
+    "lat": 19.295,
+    "lon": 72.935,
+    "type": "junction"
+  },
+  {
+    "node_id": "MASUNDA_LAKE",
+    "name": "Masunda Lake (Talao Pali)",
+    "description": "Historic lake center of Old Thane city",
+    "lat": 19.1931,
+    "lon": 72.9752,
+    "type": "junction"
+  },
+  {
+    "node_id": "COURT_NAKA",
+    "name": "Court Naka / Tembi Naka",
+    "description": "District administrative center near Civil Hospital",
+    "lat": 19.197,
+    "lon": 72.977,
+    "type": "junction"
+  },
+  {
+    "node_id": "KALWA_BRIDGE_W",
+    "name": "Kalwa Creek Bridge (West Abutment)",
+    "description": "West approach to creek bridge",
+    "lat": 19.195,
+    "lon": 72.985,
+    "type": "junction"
+  },
+  {
+    "node_id": "KALWA_BRIDGE_E",
+    "name": "Kalwa Creek Bridge (East Abutment)",
+    "description": "East approach in Kalwa across Thane Creek",
+    "lat": 19.196,
+    "lon": 72.993,
+    "type": "junction"
+  },
+  {
+    "node_id": "KALWA_CENTER",
+    "name": "Kalwa Chowk",
+    "description": "Dense commercial center east of creek",
+    "lat": 19.1952,
+    "lon": 72.9963,
+    "type": "junction"
+  },
+  {
+    "node_id": "CSMH_KALWA_JCT",
+    "name": "CSMH Hospital Junction",
+    "description": "Access point to Kalwa Municipal Hospital",
+    "lat": 19.2012,
+    "lon": 72.9975,
+    "type": "junction"
+  },
+  {
+    "node_id": "CADBURY_JUNCTION",
+    "name": "Jupiter Hospital, Thane",
+    "description": "Hospital Destination (tertiary_care_hospital)",
+    "lat": 19.2095,
+    "lon": 72.9725,
+    "type": "hospital"
+  },
+  {
+    "node_id": "VARTAK_NAGAR",
+    "name": "Bethany Hospital, Thane",
+    "description": "Hospital Destination (super_specialty_hospital)",
+    "lat": 19.2199,
+    "lon": 72.9619,
+    "type": "hospital"
+  },
+  {
+    "node_id": "COURT_NAKA",
+    "name": "District Civil Hospital, Thane",
+    "description": "Hospital Destination (government_district_hospital)",
+    "lat": 19.1985,
+    "lon": 72.9782,
+    "type": "hospital"
+  },
+  {
+    "node_id": "PANCHPAKHADI_TMC",
+    "name": "Kaushalya Medical Foundation Trust Hospital",
+    "description": "Hospital Destination (trust_hospital)",
+    "lat": 19.2001,
+    "lon": 72.9667,
+    "type": "hospital"
+  },
+  {
+    "node_id": "MANPADA",
+    "name": "Titan Hospital, Thane",
+    "description": "Hospital Destination (general_hospital)",
+    "lat": 19.2359,
+    "lon": 72.9755,
+    "type": "hospital"
+  },
+  {
+    "node_id": "PATLIPADA",
+    "name": "Currae Specialty Hospital, Thane",
+    "description": "Hospital Destination (specialty_hospital)",
+    "lat": 19.2558,
+    "lon": 72.9717,
+    "type": "hospital"
+  },
+  {
+    "node_id": "CSMH_KALWA_JCT",
+    "name": "Chhatrapati Shivaji Maharaj Hospital (CSMH Kalwa)",
+    "description": "Hospital Destination (municipal_teaching_hospital)",
+    "lat": 19.2012,
+    "lon": 72.9975,
+    "type": "hospital"
+  }
+]

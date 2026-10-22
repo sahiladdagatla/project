@@ -1,0 +1,138 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "HOSP_JUPITER",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9725,
+          19.2095
+        ]
+      },
+      "properties": {
+        "facility_id": "HOSP_JUPITER",
+        "name": "Jupiter Hospital, Thane",
+        "facility_type": "tertiary_care_hospital",
+        "nearest_node_id": "CADBURY_JUNCTION",
+        "existing_on_map": true,
+        "operational_status": "UNKNOWN_NO_VERIFIED_EVIDENCE"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HOSP_BETHANY",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9619,
+          19.2199
+        ]
+      },
+      "properties": {
+        "facility_id": "HOSP_BETHANY",
+        "name": "Bethany Hospital, Thane",
+        "facility_type": "super_specialty_hospital",
+        "nearest_node_id": "VARTAK_NAGAR",
+        "existing_on_map": true,
+        "operational_status": "UNKNOWN_NO_VERIFIED_EVIDENCE"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HOSP_CIVIL",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9782,
+          19.1985
+        ]
+      },
+      "properties": {
+        "facility_id": "HOSP_CIVIL",
+        "name": "District Civil Hospital, Thane",
+        "facility_type": "government_district_hospital",
+        "nearest_node_id": "COURT_NAKA",
+        "existing_on_map": true,
+        "operational_status": "UNKNOWN_NO_VERIFIED_EVIDENCE"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HOSP_KAUSHALYA",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9667,
+          19.2001
+        ]
+      },
+      "properties": {
+        "facility_id": "HOSP_KAUSHALYA",
+        "name": "Kaushalya Medical Foundation Trust Hospital",
+        "facility_type": "trust_hospital",
+        "nearest_node_id": "PANCHPAKHADI_TMC",
+        "existing_on_map": true,
+        "operational_status": "UNKNOWN_NO_VERIFIED_EVIDENCE"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HOSP_TITAN",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9755,
+          19.2359
+        ]
+      },
+      "properties": {
+        "facility_id": "HOSP_TITAN",
+        "name": "Titan Hospital, Thane",
+        "facility_type": "general_hospital",
+        "nearest_node_id": "MANPADA",
+        "existing_on_map": true,
+        "operational_status": "UNKNOWN_NO_VERIFIED_EVIDENCE"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HOSP_CURRAE",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9717,
+          19.2558
+        ]
+      },
+      "properties": {
+        "facility_id": "HOSP_CURRAE",
+        "name": "Currae Specialty Hospital, Thane",
+        "facility_type": "specialty_hospital",
+        "nearest_node_id": "PATLIPADA",
+        "existing_on_map": true,
+        "operational_status": "UNKNOWN_NO_VERIFIED_EVIDENCE"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HOSP_CSMH_KALWA",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.9975,
+          19.2012
+        ]
+      },
+      "properties": {
+        "facility_id": "HOSP_CSMH_KALWA",
+        "name": "Chhatrapati Shivaji Maharaj Hospital (CSMH Kalwa)",
+        "facility_type": "municipal_teaching_hospital",
+        "nearest_node_id": "CSMH_KALWA_JCT",
+        "existing_on_map": true,
+        "operational_status": "UNKNOWN_NO_VERIFIED_EVIDENCE"
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Full_Proposed_Method": {
+    "total_trips": 18,
+    "abstained_count": 18,
+    "abstention_rate": 100.0,
+    "unsafe_trips_count": 0,
+    "unsafe_failure_rate": 0.0,
+    "mean_flooded_exposure_m": 0.0,
+    "mean_duration_min": 0.0
+  },
+  "Ablation_No_Uncertainty": {
+    "total_trips": 18,
+    "abstained_count": 0,
+    "abstention_rate": 0.0,
+    "unsafe_trips_count": 0,
+    "unsafe_failure_rate": 0.0,
+    "mean_flooded_exposure_m": 0.0,
+    "mean_duration_min": 0.0
+  },
+  "Ablation_No_Arrival_Time": {
+    "total_trips": 18,
+    "abstained_count": 0,
+    "abstention_rate": 0.0,
+    "unsafe_trips_count": 0,
+    "unsafe_failure_rate": 0.0,
+    "mean_flooded_exposure_m": 0.0,
+    "mean_duration_min": 0.0
+  },
+  "Baseline_Shortest_Path": {
+    "total_trips": 18,
+    "abstained_count": 0,
+    "abstention_rate": 0.0,
+    "unsafe_trips_count": 18,
+    "unsafe_failure_rate": 100.0,
+    "mean_flooded_exposure_m": 1860.2,
+    "mean_duration_min": 21.0
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "Thane Railway Station": {
+    "query": "Thane railway station",
+    "display_name": "Thane Railway Station, Kopri, Thane, Thane Subdistrict, Thane, Maharashtra, India",
+    "lat": 19.18461,
+    "lon": 72.97103,
+    "osm_id": 37840710,
+    "osm_type": "way"
+  },
+  "Naupada": {
+    "query": "Naupada, Thane",
+    "display_name": "Thane, TMT SATIS West, Chendani Koliwada, Kopri, Thane, Thane Subdistrict, Thane, Maharashtra, 400602, India",
+    "lat": 19.18648,
+    "lon": 72.97577,
+    "osm_id": 246582717,
+    "osm_type": "node"
+  },
+  "Teen Hath Naka": {
+    "query": "Teen Hath Naka, Thane",
+    "display_name": "Teen Hath Naka, Naupada, Thane, Thane Subdistrict, Thane, Maharashtra, 400602, India",
+    "lat": 19.18838,
+    "lon": 72.96359,
+    "osm_id": 6802412635,
+    "osm_type": "node"
+  },
+  "Nitin Company Junction": {
+    "query": "Nitin Company, Thane",
+    "display_name": "Nitin Company, Nitin-Cadbury Junction Flyover, Dnyaneshwar Nagar, Panch Pakadi, Thane, Thane Subdistrict, Thane, Maharashtra, 400606, India",
+    "lat": 19.1995,
+    "lon": 72.96452,
+    "osm_id": 355429328,
+    "osm_type": "way"
+  },
+  "Majiwada Junction": {
+    "query": "Majiwada, Thane",
+    "display_name": "Majiwada, Thane, Thane Subdistrict, Thane, Maharashtra, 400601, India",
+    "lat": 19.21303,
+    "lon": 72.97849,
+    "osm_id": 1643429085,
+    "osm_type": "node"
+  },
+  "Vartak Nagar": {
+    "query": "Vartak Nagar, Thane",
+    "display_name": "Vartak Nagar, Thane, Thane Subdistrict, Thane, Maharashtra, 200014, India",
+    "lat": 19.21554,
+    "lon": 72.96271,
+    "osm_id": 1643429092,
+    "osm_type": "node"
+  },
+  "Manpada": {
+    "query": "Manpada, Thane",
+    "display_name": "Manpada, Thane, Thane Subdistrict, Thane, Maharashtra, 401302, India",
+    "lat": 19.23142,
+    "lon": 72.97382,
+    "osm_id": 8494298798,
+    "osm_type": "node"
+  },
+  "Kasarvadavali": {
+    "query": "Kasarvadavali, Thane",
+    "display_name": "A-Rey Cafe, Kasarvadavali, Anandnagar Vadavali Road Thane Bhiwandi Road, Anand Nagar, Thane, Thane Subdistrict, Thane, Maharashtra, 400615, India",
+    "lat": 19.27042,
+    "lon": 72.96908,
+    "osm_id": 352993101,
+    "osm_type": "way"
+  },
+  "Wagle Industrial Estate": {
+    "query": "Wagle Estate, Thane",
+    "display_name": "Wagle Industrial Estate, Thane, Thane Subdistrict, Thane, Maharashtra, 400604, India",
+    "lat": 19.19852,
+    "lon": 72.95098,
+    "osm_id": 1643429093,
+    "osm_type": "node"
+  },
+  "Kopri": {
+    "query": "Kopri, Thane",
+    "display_name": "Thane, TMT SATIS West, Chendani Koliwada, Kopri, Thane, Thane Subdistrict, Thane, Maharashtra, 400602, India",
+    "lat": 19.18648,
+    "lon": 72.97577,
+    "osm_id": 246582717,
+    "osm_type": "node"
+  },
+  "Kalwa": {
+    "query": "Kalwa, Thane",
+    "display_name": "Kalva, Kalwa FOB, Jambli Naka, Thane, Thane Subdistrict, Thane, Maharashtra, 400603, India",
+    "lat": 19.19522,
+    "lon": 72.99633,
+    "osm_id": 619119023,
+    "osm_type": "node"
+  },
+  "Upvan Lake": {
+    "query": "Upvan Lake, Thane",
+    "display_name": "Upvan Lake, Shivai Nagar, Thane, Thane Subdistrict, Thane, Maharashtra, India",
+    "lat": 19.22145,
+    "lon": 72.95599,
+    "osm_id": 37813439,
+    "osm_type": "way"
+  },
+  "Masunda Lake (Talao Pali)": {
+    "query": "Masunda Lake, Thane",
+    "display_name": "Talao Pali, Jambli Naka, Thane, Thane Subdistrict, Thane, Maharashtra, India",
+    "lat": 19.19305,
+    "lon": 72.97517,
+    "osm_id": 8728646,
+    "osm_type": "relation"
+  },
+  "Cadbury Junction": {
+    "query": "Cadbury Junction, Thane",
+    "display_name": "Cadbury Junction, Uthalsar, Thane, Thane Subdistrict, Thane, Maharashtra, 400606, India",
+    "lat": 19.20457,
+    "lon": 72.96883,
+    "osm_id": 3878627345,
+    "osm_type": "node"
+  },
+  "Kapurbawdi": {
+    "query": "Kapurbawdi, Thane",
+    "display_name": "Kapurbawdi Flyover, Kapurbawadi, Majiwada, Thane, Thane Subdistrict, Thane, Maharashtra, 400609, India",
+    "lat": 19.21434,
+    "lon": 72.97783,
+    "osm_id": 421707809,
+    "osm_type": "way"
+  },
+  "Hiranandani Estate": {
+    "query": "Hiranandani Estate, Thane",
+    "display_name": "Hiranandani Estate, Thane, Thane Subdistrict, Thane, Maharashtra, India",
+    "lat": 19.25493,
+    "lon": 72.98207,
+    "osm_id": 102532647,
+    "osm_type": "way"
+  },
+  "Jupiter Hospital": {
+    "query": "Jupiter Hospital, Thane",
+    "display_name": "Jupiter Hospital, Service Road, Majiwada, Thane, Thane Subdistrict, Thane, Maharashtra, 400602, India",
+    "lat": 19.20947,
+    "lon": 72.97252,
+    "osm_id": 898024674,
+    "osm_type": "way"
+  },
+  "Bethany Hospital": {
+    "query": "Bethany Hospital, Thane",
+    "display_name": "Bethany Hospital, Pokhran Road 2, Pawar Nagar, Thane, Thane Subdistrict, Thane, Maharashtra, 401302, India",
+    "lat": 19.21993,
+    "lon": 72.96194,
+    "osm_id": 921285425,
+    "osm_type": "way"
+  },
+  "Civil Hospital Thane": {
+    "query": "Civil Hospital, Thane",
+    "display_name": "Civil Hospital, Uthalsar Road, Charai, Uthalsar, Thane, Thane Subdistrict, Thane, Maharashtra, 400601, India",
+    "lat": 19.19853,
+    "lon": 72.9782,
+    "osm_id": 636938965,
+    "osm_type": "way"
+  },
+  "Kaushalya Hospital": {
+    "query": "Kaushalya Hospital, Thane",
+    "display_name": "Kaushalya Medical Foundation Trust Hospital, Mumbai, Mahadev Gopal Patil Road, Panch Pakadi, Thane, Thane Subdistrict, Thane, Maharashtra, 400601, India",
+    "lat": 19.20006,
+    "lon": 72.96667,
+    "osm_id": 7049483334,
+    "osm_type": "node"
+  },
+  "Currae Specialty Hospital": {
+    "query": "Currae Hospital, Thane",
+    "display_name": "Currae Hospital, Ghodbunder Service Road, Patlipada, Dongaripada, Thane, Thane Subdistrict, Thane, Maharashtra, 400615, India",
+    "lat": 19.25583,
+    "lon": 72.97172,
+    "osm_id": 4216317814,
+    "osm_type": "node"
+  },
+  "Titan Hospital": {
+    "query": "Titan Hospital, Thane",
+    "display_name": "Titan, Tikuji Ni Wadi Rd, Manpada, Thane, Thane Subdistrict, Thane, Maharashtra, 400610, India",
+    "lat": 19.23591,
+    "lon": 72.97549,
+    "osm_id": 12595485524,
+    "osm_type": "node"
+  }
+}

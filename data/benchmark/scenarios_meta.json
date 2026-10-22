@@ -1,0 +1,86 @@
+[
+  {
+    "scenario_id": "thane_baseline_dry",
+    "name": "Thane Baseline: Dry Weather / Free Flow",
+    "description": "Unrestricted free-flow baseline conditions across Thane road network; zero pluvial accumulation.",
+    "total_rainfall_mm": 0.0,
+    "timesteps": [
+      "2026-07-26T14:00:00+00:00",
+      "2026-07-26T14:15:00+00:00",
+      "2026-07-26T14:30:00+00:00",
+      "2026-07-26T14:45:00+00:00",
+      "2026-07-26T15:00:00+00:00",
+      "2026-07-26T15:15:00+00:00",
+      "2026-07-26T15:30:00+00:00",
+      "2026-07-26T15:45:00+00:00",
+      "2026-07-26T16:00:00+00:00",
+      "2026-07-26T16:15:00+00:00",
+      "2026-07-26T16:30:00+00:00",
+      "2026-07-26T16:45:00+00:00"
+    ],
+    "num_cells": 64
+  },
+  {
+    "scenario_id": "thane_exploratory_pluvial_95mm",
+    "name": "Exploratory Scenario: 95mm over 3h (Pluvial Proxy)",
+    "description": "Exploratory pluvial runoff scenario simulating water accumulation in documented chronic depressions (Vandana, Teen Hath Naka at-grade, Majiwada underpass).",
+    "total_rainfall_mm": 95.0,
+    "timesteps": [
+      "2026-07-26T14:00:00+00:00",
+      "2026-07-26T14:15:00+00:00",
+      "2026-07-26T14:30:00+00:00",
+      "2026-07-26T14:45:00+00:00",
+      "2026-07-26T15:00:00+00:00",
+      "2026-07-26T15:15:00+00:00",
+      "2026-07-26T15:30:00+00:00",
+      "2026-07-26T15:45:00+00:00",
+      "2026-07-26T16:00:00+00:00",
+      "2026-07-26T16:15:00+00:00",
+      "2026-07-26T16:30:00+00:00",
+      "2026-07-26T16:45:00+00:00"
+    ],
+    "num_cells": 64
+  },
+  {
+    "scenario_id": "thane_exploratory_tidal_backwater",
+    "name": "Exploratory Scenario: High Tide (4.2m) + 110mm Downpour",
+    "description": "Simulates compounding creek tidal lock preventing gravity nalla discharge into Thane Creek; severe backwater flooding in Naupada, Kopri, and Station approach.",
+    "total_rainfall_mm": 110.0,
+    "timesteps": [
+      "2026-07-26T14:00:00+00:00",
+      "2026-07-26T14:15:00+00:00",
+      "2026-07-26T14:30:00+00:00",
+      "2026-07-26T14:45:00+00:00",
+      "2026-07-26T15:00:00+00:00",
+      "2026-07-26T15:15:00+00:00",
+      "2026-07-26T15:30:00+00:00",
+      "2026-07-26T15:45:00+00:00",
+      "2026-07-26T16:00:00+00:00",
+      "2026-07-26T16:15:00+00:00",
+      "2026-07-26T16:30:00+00:00",
+      "2026-07-26T16:45:00+00:00"
+    ],
+    "num_cells": 64
+  },
+  {
+    "scenario_id": "thane_cloudburst_flash_surge",
+    "name": "Exploratory Scenario: 130mm Cloudburst Surge (Held-Out Test)",
+    "description": "Intense foothill runoff cascading from Yeoor ridge across Pokhran Road and Ghodbunder Road corridors.",
+    "total_rainfall_mm": 130.0,
+    "timesteps": [
+      "2026-07-26T14:00:00+00:00",
+      "2026-07-26T14:15:00+00:00",
+      "2026-07-26T14:30:00+00:00",
+      "2026-07-26T14:45:00+00:00",
+      "2026-07-26T15:00:00+00:00",
+      "2026-07-26T15:15:00+00:00",
+      "2026-07-26T15:30:00+00:00",
+      "2026-07-26T15:45:00+00:00",
+      "2026-07-26T16:00:00+00:00",
+      "2026-07-26T16:15:00+00:00",
+      "2026-07-26T16:30:00+00:00",
+      "2026-07-26T16:45:00+00:00"
+    ],
+    "num_cells": 64
+  }
+]

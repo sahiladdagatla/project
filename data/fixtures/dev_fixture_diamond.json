@@ -1,0 +1,28 @@
+{
+  "FIXTURE_LABEL": "SYNTHETIC_DEVELOPMENT_FIXTURE_DO_NOT_USE_FOR_RESEARCH_EVALUATION",
+  "description": "Small 4-node diamond graph for fast unit tests and UI integration verification.",
+  "nodes": [
+    {
+      "id": "F_ORIGIN",
+      "lat": 19.0,
+      "lon": 72.8
+    },
+    {
+      "id": "F_LOWLAND",
+      "lat": 19.01,
+      "lon": 72.81,
+      "flooded_at_t30": true
+    },
+    {
+      "id": "F_RIDGE",
+      "lat": 19.01,
+      "lon": 72.79,
+      "flooded_at_t30": false
+    },
+    {
+      "id": "F_DEST",
+      "lat": 19.02,
+      "lon": 72.8
+    }
+  ]
+}

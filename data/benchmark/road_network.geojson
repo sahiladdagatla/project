@@ -1,0 +1,1993 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "TH_E001",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.968,
+            19.176
+          ],
+          [
+            72.9636,
+            19.1884
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E001",
+        "u": "MULUND_TOLL",
+        "v": "TEEN_HATH_NAKA",
+        "length_m": 1454.2,
+        "highway_type": "trunk",
+        "speed_limit_kmh": 60.0,
+        "free_flow_time_s": 87.3,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E002",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9636,
+            19.1884
+          ],
+          [
+            72.968,
+            19.176
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E002",
+        "u": "TEEN_HATH_NAKA",
+        "v": "MULUND_TOLL",
+        "length_m": 1454.2,
+        "highway_type": "trunk",
+        "speed_limit_kmh": 60.0,
+        "free_flow_time_s": 87.3,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E003",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9636,
+            19.1884
+          ],
+          [
+            72.9645,
+            19.1995
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E003",
+        "u": "TEEN_HATH_NAKA",
+        "v": "NITIN_JUNCTION",
+        "length_m": 1237.9,
+        "highway_type": "primary",
+        "speed_limit_kmh": 45.0,
+        "free_flow_time_s": 99.0,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E004",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9645,
+            19.1995
+          ],
+          [
+            72.9636,
+            19.1884
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E004",
+        "u": "NITIN_JUNCTION",
+        "v": "TEEN_HATH_NAKA",
+        "length_m": 1237.9,
+        "highway_type": "primary",
+        "speed_limit_kmh": 45.0,
+        "free_flow_time_s": 99.0,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E005",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.968,
+            19.176
+          ],
+          [
+            72.9636,
+            19.1884
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E005",
+        "u": "MULUND_TOLL",
+        "v": "TEEN_HATH_FLYOVR",
+        "length_m": 1454.2,
+        "highway_type": "trunk",
+        "speed_limit_kmh": 70.0,
+        "free_flow_time_s": 74.8,
+        "is_bridge": true,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E006",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9636,
+            19.1884
+          ],
+          [
+            72.9645,
+            19.1995
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E006",
+        "u": "TEEN_HATH_FLYOVR",
+        "v": "NITIN_FLYOVR",
+        "length_m": 1237.9,
+        "highway_type": "trunk",
+        "speed_limit_kmh": 70.0,
+        "free_flow_time_s": 63.7,
+        "is_bridge": true,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E007",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9645,
+            19.1995
+          ],
+          [
+            72.9688,
+            19.2046
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E007",
+        "u": "NITIN_FLYOVR",
+        "v": "CADBURY_JUNCTION",
+        "length_m": 724.9,
+        "highway_type": "trunk",
+        "speed_limit_kmh": 65.0,
+        "free_flow_time_s": 40.1,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E008",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9645,
+            19.1995
+          ],
+          [
+            72.9688,
+            19.2046
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E008",
+        "u": "NITIN_JUNCTION",
+        "v": "CADBURY_JUNCTION",
+        "length_m": 724.9,
+        "highway_type": "trunk",
+        "speed_limit_kmh": 55.0,
+        "free_flow_time_s": 47.4,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E009",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9688,
+            19.2046
+          ],
+          [
+            72.9645,
+            19.1995
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E009",
+        "u": "CADBURY_JUNCTION",
+        "v": "NITIN_JUNCTION",
+        "length_m": 724.9,
+        "highway_type": "trunk",
+        "speed_limit_kmh": 55.0,
+        "free_flow_time_s": 47.4,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E010",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9688,
+            19.2046
+          ],
+          [
+            72.9785,
+            19.213
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E010",
+        "u": "CADBURY_JUNCTION",
+        "v": "MAJIWADA_JUNCTION",
+        "length_m": 1382.0,
+        "highway_type": "trunk",
+        "speed_limit_kmh": 55.0,
+        "free_flow_time_s": 90.5,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E011",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9785,
+            19.213
+          ],
+          [
+            72.9688,
+            19.2046
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E011",
+        "u": "MAJIWADA_JUNCTION",
+        "v": "CADBURY_JUNCTION",
+        "length_m": 1382.0,
+        "highway_type": "trunk",
+        "speed_limit_kmh": 55.0,
+        "free_flow_time_s": 90.5,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E012",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9688,
+            19.2046
+          ],
+          [
+            72.9785,
+            19.213
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E012",
+        "u": "CADBURY_JUNCTION",
+        "v": "MAJIWADA_FLYOVR",
+        "length_m": 1382.0,
+        "highway_type": "trunk",
+        "speed_limit_kmh": 65.0,
+        "free_flow_time_s": 76.5,
+        "is_bridge": true,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E013",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9785,
+            19.213
+          ],
+          [
+            72.9738,
+            19.2314
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E013",
+        "u": "MAJIWADA_FLYOVR",
+        "v": "MANPADA",
+        "length_m": 2104.7,
+        "highway_type": "trunk",
+        "speed_limit_kmh": 70.0,
+        "free_flow_time_s": 108.2,
+        "is_bridge": true,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E014",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9785,
+            19.213
+          ],
+          [
+            72.9778,
+            19.2143
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E014",
+        "u": "MAJIWADA_JUNCTION",
+        "v": "KAPURBAWDI",
+        "length_m": 162.2,
+        "highway_type": "primary",
+        "speed_limit_kmh": 45.0,
+        "free_flow_time_s": 13.0,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E015",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9778,
+            19.2143
+          ],
+          [
+            72.9785,
+            19.213
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E015",
+        "u": "KAPURBAWDI",
+        "v": "MAJIWADA_JUNCTION",
+        "length_m": 162.2,
+        "highway_type": "primary",
+        "speed_limit_kmh": 45.0,
+        "free_flow_time_s": 13.0,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E016",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9778,
+            19.2143
+          ],
+          [
+            72.9738,
+            19.2314
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E016",
+        "u": "KAPURBAWDI",
+        "v": "MANPADA",
+        "length_m": 1947.3,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 140.2,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E017",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9738,
+            19.2314
+          ],
+          [
+            72.9778,
+            19.2143
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E017",
+        "u": "MANPADA",
+        "v": "KAPURBAWDI",
+        "length_m": 1947.3,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 140.2,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E018",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9738,
+            19.2314
+          ],
+          [
+            72.972,
+            19.243
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E018",
+        "u": "MANPADA",
+        "v": "BRAHMAND",
+        "length_m": 1303.6,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 93.9,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E019",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.972,
+            19.243
+          ],
+          [
+            72.9738,
+            19.2314
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E019",
+        "u": "BRAHMAND",
+        "v": "MANPADA",
+        "length_m": 1303.6,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 93.9,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E020",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.972,
+            19.243
+          ],
+          [
+            72.97,
+            19.249
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E020",
+        "u": "BRAHMAND",
+        "v": "PATLIPADA",
+        "length_m": 699.4,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 50.4,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E021",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.97,
+            19.249
+          ],
+          [
+            72.972,
+            19.243
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E021",
+        "u": "PATLIPADA",
+        "v": "BRAHMAND",
+        "length_m": 699.4,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 50.4,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E022",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.97,
+            19.249
+          ],
+          [
+            72.9821,
+            19.2549
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E022",
+        "u": "PATLIPADA",
+        "v": "HIRANANDANI_EST",
+        "length_m": 1429.6,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 40.0,
+        "free_flow_time_s": 128.7,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E023",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9821,
+            19.2549
+          ],
+          [
+            72.97,
+            19.249
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E023",
+        "u": "HIRANANDANI_EST",
+        "v": "PATLIPADA",
+        "length_m": 1429.6,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 40.0,
+        "free_flow_time_s": 128.7,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E024",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.97,
+            19.249
+          ],
+          [
+            72.97,
+            19.261
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E024",
+        "u": "PATLIPADA",
+        "v": "WAGHBIL",
+        "length_m": 1334.3,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 96.1,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E025",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.97,
+            19.261
+          ],
+          [
+            72.97,
+            19.249
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E025",
+        "u": "WAGHBIL",
+        "v": "PATLIPADA",
+        "length_m": 1334.3,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 96.1,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E026",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.97,
+            19.261
+          ],
+          [
+            72.9691,
+            19.2704
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E026",
+        "u": "WAGHBIL",
+        "v": "KASARVADAVALI",
+        "length_m": 1049.5,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 75.6,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E027",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9691,
+            19.2704
+          ],
+          [
+            72.97,
+            19.261
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E027",
+        "u": "KASARVADAVALI",
+        "v": "WAGHBIL",
+        "length_m": 1049.5,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 75.6,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E028",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9691,
+            19.2704
+          ],
+          [
+            72.963,
+            19.278
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E028",
+        "u": "KASARVADAVALI",
+        "v": "OVALA",
+        "length_m": 1060.2,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 76.3,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E029",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.963,
+            19.278
+          ],
+          [
+            72.9691,
+            19.2704
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E029",
+        "u": "OVALA",
+        "v": "KASARVADAVALI",
+        "length_m": 1060.2,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 76.3,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E030",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.963,
+            19.278
+          ],
+          [
+            72.935,
+            19.295
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E030",
+        "u": "OVALA",
+        "v": "GAIMUKH",
+        "length_m": 3494.2,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 251.6,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E031",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.935,
+            19.295
+          ],
+          [
+            72.963,
+            19.278
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E031",
+        "u": "GAIMUKH",
+        "v": "OVALA",
+        "length_m": 3494.2,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 251.6,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E032",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9688,
+            19.2046
+          ],
+          [
+            72.9627,
+            19.2155
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E032",
+        "u": "CADBURY_JUNCTION",
+        "v": "VARTAK_NAGAR",
+        "length_m": 1370.9,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 40.0,
+        "free_flow_time_s": 123.4,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E033",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9627,
+            19.2155
+          ],
+          [
+            72.9688,
+            19.2046
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E033",
+        "u": "VARTAK_NAGAR",
+        "v": "CADBURY_JUNCTION",
+        "length_m": 1370.9,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 40.0,
+        "free_flow_time_s": 123.4,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E034",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9627,
+            19.2155
+          ],
+          [
+            72.956,
+            19.2214
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E034",
+        "u": "VARTAK_NAGAR",
+        "v": "UPVAN_LAKE",
+        "length_m": 961.9,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 35.0,
+        "free_flow_time_s": 98.9,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E035",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.956,
+            19.2214
+          ],
+          [
+            72.9627,
+            19.2155
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E035",
+        "u": "UPVAN_LAKE",
+        "v": "VARTAK_NAGAR",
+        "length_m": 961.9,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 35.0,
+        "free_flow_time_s": 98.9,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E036",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9778,
+            19.2143
+          ],
+          [
+            72.9627,
+            19.2155
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E036",
+        "u": "KAPURBAWDI",
+        "v": "VARTAK_NAGAR",
+        "length_m": 1591.1,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 40.0,
+        "free_flow_time_s": 143.2,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E037",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9627,
+            19.2155
+          ],
+          [
+            72.9778,
+            19.2143
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E037",
+        "u": "VARTAK_NAGAR",
+        "v": "KAPURBAWDI",
+        "length_m": 1591.1,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 40.0,
+        "free_flow_time_s": 143.2,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E038",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9627,
+            19.2155
+          ],
+          [
+            72.951,
+            19.1985
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E038",
+        "u": "VARTAK_NAGAR",
+        "v": "WAGLE_ESTATE",
+        "length_m": 2254.5,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 35.0,
+        "free_flow_time_s": 231.9,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E039",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.951,
+            19.1985
+          ],
+          [
+            72.9627,
+            19.2155
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E039",
+        "u": "WAGLE_ESTATE",
+        "v": "VARTAK_NAGAR",
+        "length_m": 2254.5,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 35.0,
+        "free_flow_time_s": 231.9,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E040",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.948,
+            19.182
+          ],
+          [
+            72.951,
+            19.1985
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E040",
+        "u": "WAGLE_CHECK_NAKA",
+        "v": "WAGLE_ESTATE",
+        "length_m": 1861.6,
+        "highway_type": "primary",
+        "speed_limit_kmh": 45.0,
+        "free_flow_time_s": 148.9,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E041",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.951,
+            19.1985
+          ],
+          [
+            72.948,
+            19.182
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E041",
+        "u": "WAGLE_ESTATE",
+        "v": "WAGLE_CHECK_NAKA",
+        "length_m": 1861.6,
+        "highway_type": "primary",
+        "speed_limit_kmh": 45.0,
+        "free_flow_time_s": 148.9,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E042",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.951,
+            19.1985
+          ],
+          [
+            72.9636,
+            19.1884
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E042",
+        "u": "WAGLE_ESTATE",
+        "v": "TEEN_HATH_NAKA",
+        "length_m": 1735.5,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 40.0,
+        "free_flow_time_s": 156.2,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E043",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9636,
+            19.1884
+          ],
+          [
+            72.951,
+            19.1985
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E043",
+        "u": "TEEN_HATH_NAKA",
+        "v": "WAGLE_ESTATE",
+        "length_m": 1735.5,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 40.0,
+        "free_flow_time_s": 156.2,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E044",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.968,
+            19.176
+          ],
+          [
+            72.948,
+            19.182
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E044",
+        "u": "MULUND_TOLL",
+        "v": "WAGLE_CHECK_NAKA",
+        "length_m": 2203.9,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 35.0,
+        "free_flow_time_s": 226.7,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E045",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.948,
+            19.182
+          ],
+          [
+            72.968,
+            19.176
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E045",
+        "u": "WAGLE_CHECK_NAKA",
+        "v": "MULUND_TOLL",
+        "length_m": 2203.9,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 35.0,
+        "free_flow_time_s": 226.7,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E046",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.971,
+            19.1846
+          ],
+          [
+            72.9758,
+            19.1865
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E046",
+        "u": "TH_STATION",
+        "v": "NAUPADA",
+        "length_m": 546.6,
+        "highway_type": "tertiary",
+        "speed_limit_kmh": 30.0,
+        "free_flow_time_s": 65.6,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E047",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9758,
+            19.1865
+          ],
+          [
+            72.971,
+            19.1846
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E047",
+        "u": "NAUPADA",
+        "v": "TH_STATION",
+        "length_m": 546.6,
+        "highway_type": "tertiary",
+        "speed_limit_kmh": 30.0,
+        "free_flow_time_s": 65.6,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E048",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9758,
+            19.1865
+          ],
+          [
+            72.969,
+            19.187
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E048",
+        "u": "NAUPADA",
+        "v": "VANDANA_CINEMA",
+        "length_m": 716.3,
+        "highway_type": "tertiary",
+        "speed_limit_kmh": 25.0,
+        "free_flow_time_s": 103.1,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E049",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.969,
+            19.187
+          ],
+          [
+            72.9758,
+            19.1865
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E049",
+        "u": "VANDANA_CINEMA",
+        "v": "NAUPADA",
+        "length_m": 716.3,
+        "highway_type": "tertiary",
+        "speed_limit_kmh": 25.0,
+        "free_flow_time_s": 103.1,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E050",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.969,
+            19.187
+          ],
+          [
+            72.9636,
+            19.1884
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E050",
+        "u": "VANDANA_CINEMA",
+        "v": "TEEN_HATH_NAKA",
+        "length_m": 588.1,
+        "highway_type": "tertiary",
+        "speed_limit_kmh": 30.0,
+        "free_flow_time_s": 70.6,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E051",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9636,
+            19.1884
+          ],
+          [
+            72.969,
+            19.187
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E051",
+        "u": "TEEN_HATH_NAKA",
+        "v": "VANDANA_CINEMA",
+        "length_m": 588.1,
+        "highway_type": "tertiary",
+        "speed_limit_kmh": 30.0,
+        "free_flow_time_s": 70.6,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E052",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.969,
+            19.187
+          ],
+          [
+            72.967,
+            19.197
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E052",
+        "u": "VANDANA_CINEMA",
+        "v": "PANCHPAKHADI_TMC",
+        "length_m": 1131.6,
+        "highway_type": "tertiary",
+        "speed_limit_kmh": 30.0,
+        "free_flow_time_s": 135.8,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E053",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.967,
+            19.197
+          ],
+          [
+            72.969,
+            19.187
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E053",
+        "u": "PANCHPAKHADI_TMC",
+        "v": "VANDANA_CINEMA",
+        "length_m": 1131.6,
+        "highway_type": "tertiary",
+        "speed_limit_kmh": 30.0,
+        "free_flow_time_s": 135.8,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E054",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9758,
+            19.1865
+          ],
+          [
+            72.9752,
+            19.1931
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E054",
+        "u": "NAUPADA",
+        "v": "MASUNDA_LAKE",
+        "length_m": 736.6,
+        "highway_type": "tertiary",
+        "speed_limit_kmh": 25.0,
+        "free_flow_time_s": 106.1,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E055",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9752,
+            19.1931
+          ],
+          [
+            72.9758,
+            19.1865
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E055",
+        "u": "MASUNDA_LAKE",
+        "v": "NAUPADA",
+        "length_m": 736.6,
+        "highway_type": "tertiary",
+        "speed_limit_kmh": 25.0,
+        "free_flow_time_s": 106.1,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E056",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9752,
+            19.1931
+          ],
+          [
+            72.977,
+            19.197
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E056",
+        "u": "MASUNDA_LAKE",
+        "v": "COURT_NAKA",
+        "length_m": 473.1,
+        "highway_type": "tertiary",
+        "speed_limit_kmh": 30.0,
+        "free_flow_time_s": 56.8,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E057",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.977,
+            19.197
+          ],
+          [
+            72.9752,
+            19.1931
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E057",
+        "u": "COURT_NAKA",
+        "v": "MASUNDA_LAKE",
+        "length_m": 473.1,
+        "highway_type": "tertiary",
+        "speed_limit_kmh": 30.0,
+        "free_flow_time_s": 56.8,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E058",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.977,
+            19.197
+          ],
+          [
+            72.9785,
+            19.213
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E058",
+        "u": "COURT_NAKA",
+        "v": "MAJIWADA_JUNCTION",
+        "length_m": 1786.1,
+        "highway_type": "primary",
+        "speed_limit_kmh": 45.0,
+        "free_flow_time_s": 142.9,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E059",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9785,
+            19.213
+          ],
+          [
+            72.977,
+            19.197
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E059",
+        "u": "MAJIWADA_JUNCTION",
+        "v": "COURT_NAKA",
+        "length_m": 1786.1,
+        "highway_type": "primary",
+        "speed_limit_kmh": 45.0,
+        "free_flow_time_s": 142.9,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E060",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.971,
+            19.1846
+          ],
+          [
+            72.972,
+            19.177
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E060",
+        "u": "TH_STATION",
+        "v": "KOPRI",
+        "length_m": 851.6,
+        "highway_type": "tertiary",
+        "speed_limit_kmh": 25.0,
+        "free_flow_time_s": 122.6,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E061",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.972,
+            19.177
+          ],
+          [
+            72.971,
+            19.1846
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E061",
+        "u": "KOPRI",
+        "v": "TH_STATION",
+        "length_m": 851.6,
+        "highway_type": "tertiary",
+        "speed_limit_kmh": 25.0,
+        "free_flow_time_s": 122.6,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E062",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.972,
+            19.177
+          ],
+          [
+            72.968,
+            19.176
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E062",
+        "u": "KOPRI",
+        "v": "MULUND_TOLL",
+        "length_m": 434.6,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 35.0,
+        "free_flow_time_s": 44.7,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E063",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.968,
+            19.176
+          ],
+          [
+            72.972,
+            19.177
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E063",
+        "u": "MULUND_TOLL",
+        "v": "KOPRI",
+        "length_m": 434.6,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 35.0,
+        "free_flow_time_s": 44.7,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E064",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.977,
+            19.197
+          ],
+          [
+            72.985,
+            19.195
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E064",
+        "u": "COURT_NAKA",
+        "v": "KALWA_BRIDGE_W",
+        "length_m": 869.0,
+        "highway_type": "primary",
+        "speed_limit_kmh": 45.0,
+        "free_flow_time_s": 69.5,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E065",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.985,
+            19.195
+          ],
+          [
+            72.977,
+            19.197
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E065",
+        "u": "KALWA_BRIDGE_W",
+        "v": "COURT_NAKA",
+        "length_m": 869.0,
+        "highway_type": "primary",
+        "speed_limit_kmh": 45.0,
+        "free_flow_time_s": 69.5,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E066",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.985,
+            19.195
+          ],
+          [
+            72.993,
+            19.196
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E066",
+        "u": "KALWA_BRIDGE_W",
+        "v": "KALWA_BRIDGE_E",
+        "length_m": 847.4,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 61.0,
+        "is_bridge": true,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E067",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.993,
+            19.196
+          ],
+          [
+            72.985,
+            19.195
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E067",
+        "u": "KALWA_BRIDGE_E",
+        "v": "KALWA_BRIDGE_W",
+        "length_m": 847.4,
+        "highway_type": "primary",
+        "speed_limit_kmh": 50.0,
+        "free_flow_time_s": 61.0,
+        "is_bridge": true,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E068",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.993,
+            19.196
+          ],
+          [
+            72.9963,
+            19.1952
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E068",
+        "u": "KALWA_BRIDGE_E",
+        "v": "KALWA_CENTER",
+        "length_m": 357.8,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 35.0,
+        "free_flow_time_s": 36.8,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E069",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9963,
+            19.1952
+          ],
+          [
+            72.993,
+            19.196
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E069",
+        "u": "KALWA_CENTER",
+        "v": "KALWA_BRIDGE_E",
+        "length_m": 357.8,
+        "highway_type": "secondary",
+        "speed_limit_kmh": 35.0,
+        "free_flow_time_s": 36.8,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E070",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9963,
+            19.1952
+          ],
+          [
+            72.9975,
+            19.2012
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E070",
+        "u": "KALWA_CENTER",
+        "v": "CSMH_KALWA_JCT",
+        "length_m": 679.0,
+        "highway_type": "primary",
+        "speed_limit_kmh": 40.0,
+        "free_flow_time_s": 61.1,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "TH_E071",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.9975,
+            19.2012
+          ],
+          [
+            72.9963,
+            19.1952
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "TH_E071",
+        "u": "CSMH_KALWA_JCT",
+        "v": "KALWA_CENTER",
+        "length_m": 679.0,
+        "highway_type": "primary",
+        "speed_limit_kmh": 40.0,
+        "free_flow_time_s": 61.1,
+        "is_bridge": false,
+        "is_tunnel": false
+      }
+    }
+  ]
+}
