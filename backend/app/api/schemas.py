@@ -53,3 +53,25 @@ class FloodLayerCellResponse(BaseModel):
     status: str  # 'dry', 'caution', 'impassable'
     water_surface_elev_m: float
     ground_elevation_m: float
+
+
+class LiveWeatherResponse(BaseModel):
+    status: str
+    location: str
+    latitude: float
+    longitude: float
+    source: str
+    temperature_c: float
+    humidity_pct: int
+    precipitation_mmh: float
+    rain_mmh: float
+    weather_code: int
+    weather_description: str
+    wind_speed_kmh: float
+    hourly_forecast_24h: List[float]
+    max_forecast_24h_mm: float
+    last_updated_iso: str
+
+
+class SyncLiveWeatherRequest(BaseModel):
+    rain_override_mm: Optional[float] = Field(default=None, description="Optional custom rain intensity in mm to inject into live scenario")

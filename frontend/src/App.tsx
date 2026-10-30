@@ -9,7 +9,7 @@ import { ResearchDashboard } from './components/ResearchDashboard';
 export const App: React.FC = () => {
   const [operatingMode, setOperatingMode] = useState<string>('exploratory_thane_scenario');
   const [scenarios, setScenarios] = useState<any[]>([]);
-  const [selectedScenarioId, setSelectedScenarioId] = useState<string>('thane_exploratory_pluvial_95mm');
+  const [selectedScenarioId, setSelectedScenarioId] = useState<string>('thane_live_dynamic');
   const [currentTimestepIdx, setCurrentTimestepIdx] = useState<number>(2);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
@@ -27,6 +27,10 @@ export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'routes' | 'accessibility' | 'satellite' | 'research'>('routes');
   const [isRoutingLoading, setIsRoutingLoading] = useState<boolean>(false);
 
+  // Live Open-Meteo Weather State
+  const [liveWeather, setLiveWeather] = useState<any>(null);
+  const [isWeatherSyncing, setIsWeatherSyncing] = useState<boolean>(false);
+
   // 1. Initial Data Fetch
   useEffect(() => {
     fetch('/api/scenarios')
@@ -34,11 +38,16 @@ export const App: React.FC = () => {
       .then(data => {
         setScenarios(data);
         if (data.length > 0) {
-          const defaultSc = data.find((s: any) => s.scenario_id === 'thane_exploratory_pluvial_95mm') || data[0];
-          setSelectedScenarioId(defaultSc.scenario_id);
+          const liveSc = data.find((s: any) => s.scenario_id === 'thane_live_dynamic');
+          setSelectedScenarioId(liveSc ? liveSc.scenario_id : data[0].scenario_id);
         }
       })
       .catch(err => console.error('Failed to load scenarios:', err));
+
+    fetch('/api/weather/live')
+      .then(r => r.json())
+      .then(data => setLiveWeather(data))
+      .catch(err => console.error('Failed to load live weather:', err));
 
     fetch('/api/network/geojson')
       .then(r => r.json())
@@ -87,10 +96,10 @@ export const App: React.FC = () => {
   }, [isPlaying]);
 
   // 4. Trigger Route Comparison with actual Thane coordinates
-  const handleRunComparison = () => {
+  const handleRunComparison = (overrideScenarioId?: string) => {
     setIsRoutingLoading(true);
 
-    // Resolve lat/lon for selected origin and destination
+    const scId = overrideScenarioId || selectedScenarioId;
     let origLat = 19.1846, origLon = 72.9710;
     let destLat = 19.2046, destLon = 72.9688;
 
@@ -111,7 +120,7 @@ export const App: React.FC = () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        scenario_id: selectedScenarioId,
+        scenario_id: scId,
         origin_lat: origLat,
         origin_lon: origLon,
         dest_lat: destLat,
@@ -131,6 +140,38 @@ export const App: React.FC = () => {
       });
   };
 
+  // 5. Synchronize Live Open-Meteo Weather & Inundation on Demand
+  const handleSyncLiveWeather = (rainOverrideMm?: number) => {
+    setIsWeatherSyncing(true);
+    fetch('/api/weather/sync', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ rain_override_mm: rainOverrideMm })
+    })
+      .then(r => r.json())
+      .then(data => {
+        setIsWeatherSyncing(false);
+        if (data.status === 'success') {
+          setLiveWeather(data.weather);
+          setSelectedScenarioId('thane_live_dynamic');
+          // Re-fetch scenarios
+          fetch('/api/scenarios')
+            .then(res => res.json())
+            .then(scList => setScenarios(scList));
+          // Refresh flood layer
+          fetch(`/api/flood-layer?scenario_id=thane_live_dynamic&timestep_idx=${currentTimestepIdx}`)
+            .then(res => res.json())
+            .then(flData => setFloodLayerGeojson(flData));
+          // Re-run routing comparison
+          handleRunComparison('thane_live_dynamic');
+        }
+      })
+      .catch(err => {
+        console.error('Failed to sync live weather:', err);
+        setIsWeatherSyncing(false);
+      });
+  };
+
   // Run initial comparison on mount once scenarios ready
   useEffect(() => {
     if (scenarios.length > 0) {
@@ -145,8 +186,8 @@ export const App: React.FC = () => {
     >
       {/* Left Sidebar: Controls & Scenarios */}
       <div
-        className="w-[360px] flex-shrink-0 h-full p-3 z-10"
-        style={{ width: '360px', flexShrink: 0, height: '100%', padding: '12px', zIndex: 10, boxSizing: 'border-box' }}
+        className="w-[370px] flex-shrink-0 h-full p-3 z-10"
+        style={{ width: '370px', flexShrink: 0, height: '100%', padding: '12px', zIndex: 10, boxSizing: 'border-box' }}
       >
         <ControlPanel
           operatingMode={operatingMode}
@@ -165,8 +206,11 @@ export const App: React.FC = () => {
           places={places}
           activeTab={activeTab}
           setActiveTab={setActiveTab}
-          onRunComparison={handleRunComparison}
+          onRunComparison={() => handleRunComparison()}
           isRoutingLoading={isRoutingLoading}
+          liveWeather={liveWeather}
+          onSyncLiveWeather={handleSyncLiveWeather}
+          isWeatherSyncing={isWeatherSyncing}
         />
       </div>
 

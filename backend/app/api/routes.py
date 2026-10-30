@@ -9,6 +9,7 @@ Serves:
 - Dynamic facility accessibility & critical roads
 - Satellite flood segmentation (Sen1Floods11)
 - Real experimental results and ablation summaries
+- Live Open-Meteo weather telemetry and dynamic live rainfall scenarios
 """
 
 import json
@@ -22,13 +23,15 @@ from backend.app.config import (
     BENCHMARK_DATA_DIR, OUTPUTS_DIR
 )
 from backend.app.thane_data_factory import generate_thane_catchment
+from backend.app.live_weather import fetch_live_thane_weather, build_live_dynamic_scenario
 from backend.app.routing.algorithms import FloodRouter
 from backend.app.routing.models import PolicyComparisonResult, RouteResult
 from backend.app.accessibility.facility_analysis import AccessibilityAnalyzer, NetworkAccessibilitySummary
 from backend.app.accessibility.critical_roads import rank_critical_road_segments, CriticalRoadsRankingResult
 from backend.app.models.satellite_segmentation.inference import SatelliteFloodService
 from backend.app.api.schemas import (
-    SystemStatusResponse, RouteComparisonRequest, ScenarioMetadataResponse
+    SystemStatusResponse, RouteComparisonRequest, ScenarioMetadataResponse,
+    LiveWeatherResponse, SyncLiveWeatherRequest
 )
 
 
@@ -37,6 +40,11 @@ router = APIRouter(prefix="/api")
 # In-memory cached instances for fast, state-preserving responses
 _network, _scenarios, _facilities, _places = generate_thane_catchment()
 _satellite_service = SatelliteFloodService()
+
+# Initialize dynamic live Open-Meteo weather scenario
+_mesh_cells = list(next(iter(_scenarios.values())).cells.values())
+_latest_live_weather = fetch_live_thane_weather()
+_scenarios["thane_live_dynamic"] = build_live_dynamic_scenario(_mesh_cells, _latest_live_weather)
 
 
 @router.get("/status", response_model=SystemStatusResponse)
@@ -72,9 +80,41 @@ def get_places():
     return _places
 
 
+@router.get("/weather/live", response_model=LiveWeatherResponse)
+def get_live_weather():
+    """Returns real-time Open-Meteo meteorological telemetry for Thane."""
+    global _latest_live_weather
+    _latest_live_weather = fetch_live_thane_weather()
+    return _latest_live_weather
+
+
+@router.post("/weather/sync")
+def sync_live_weather(req: SyncLiveWeatherRequest):
+    """
+    Syncs live Open-Meteo weather and updates the dynamic live scenario in real time.
+    Supports injecting live observed or projected rainfall intensities.
+    """
+    global _latest_live_weather, _scenarios
+    _latest_live_weather = fetch_live_thane_weather()
+    updated_sc = build_live_dynamic_scenario(_mesh_cells, _latest_live_weather, req.rain_override_mm)
+    _scenarios["thane_live_dynamic"] = updated_sc
+    return {
+        "status": "success",
+        "weather": _latest_live_weather,
+        "scenario": {
+            "scenario_id": updated_sc.scenario_id,
+            "name": updated_sc.name,
+            "description": updated_sc.rainfall_description,
+            "total_rainfall_mm": updated_sc.total_rainfall_mm,
+            "timesteps": [t.isoformat() for t in updated_sc.timesteps],
+            "num_cells": len(updated_sc.cells)
+        }
+    }
+
+
 @router.get("/scenarios", response_model=List[ScenarioMetadataResponse])
 def get_scenarios():
-    """Lists all supported benchmark hydrodynamic storm scenarios."""
+    """Lists all supported benchmark and live hydrodynamic storm scenarios."""
     meta = []
     for sid, sc in _scenarios.items():
         meta.append(ScenarioMetadataResponse(
@@ -273,8 +313,6 @@ def get_facility_accessibility(
     analyzer = AccessibilityAnalyzer(_network, sc)
     for fid, fac in _facilities.items():
         analyzer.register_facility(fac)
-
-    return analyzer.evaluate_accessibility_at_time(origin_node_id, query_dt)
 
     return analyzer.evaluate_accessibility_at_time(origin_node_id, query_dt)
 

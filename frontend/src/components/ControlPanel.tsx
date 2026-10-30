@@ -1,5 +1,8 @@
-import React from 'react';
-import { Play, Pause, RotateCcw, Activity, Navigation, Satellite, FileText } from 'lucide-react';
+import React, { useState } from 'react';
+import {
+  Play, Pause, RotateCcw, Activity, Navigation, Satellite, FileText,
+  CloudRain, RefreshCw, Thermometer, Droplets, Wind, Radio
+} from 'lucide-react';
 
 interface ControlPanelProps {
   operatingMode: string;
@@ -20,6 +23,9 @@ interface ControlPanelProps {
   setActiveTab: (tab: 'routes' | 'accessibility' | 'satellite' | 'research') => void;
   onRunComparison: () => void;
   isRoutingLoading: boolean;
+  liveWeather: any;
+  onSyncLiveWeather: (rainOverride?: number) => void;
+  isWeatherSyncing: boolean;
 }
 
 export const ControlPanel: React.FC<ControlPanelProps> = ({
@@ -40,7 +46,10 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
   activeTab,
   setActiveTab,
   onRunComparison,
-  isRoutingLoading
+  isRoutingLoading,
+  liveWeather,
+  onSyncLiveWeather,
+  isWeatherSyncing
 }) => {
   const currentScenario = scenarios.find(s => s.scenario_id === selectedScenarioId) || scenarios[0];
   const maxTimesteps = currentScenario?.timesteps?.length || 12;
@@ -74,6 +83,89 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
             <span>● Study Area: TMC Boundary (OSM 7120000)</span>
           </div>
         </div>
+      </div>
+
+      {/* Live Open-Meteo Weather Widget */}
+      <div className="p-2.5 rounded-lg border border-cyan-800/60 bg-gradient-to-br from-slate-900/90 to-cyan-950/30 flex flex-col gap-2">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-1.5">
+            <Radio className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+            <span className="text-[11px] font-bold tracking-wide uppercase text-cyan-300">
+              Live Weather Feed (Open-Meteo)
+            </span>
+          </div>
+          <button
+            onClick={() => onSyncLiveWeather()}
+            disabled={isWeatherSyncing}
+            className="flex items-center gap-1 text-[10px] bg-cyan-950 hover:bg-cyan-900 border border-cyan-700 text-cyan-300 px-2 py-0.5 rounded transition disabled:opacity-50"
+            title="Poll real-time Open-Meteo telemetry for Thane"
+          >
+            <RefreshCw className={`w-3 h-3 ${isWeatherSyncing ? 'animate-spin' : ''}`} />
+            <span>{isWeatherSyncing ? 'Syncing...' : 'Sync Live'}</span>
+          </button>
+        </div>
+
+        {liveWeather ? (
+          <div className="flex flex-col gap-1.5 text-[11px]">
+            <div className="flex items-center justify-between border-b border-slate-800/80 pb-1">
+              <span className="text-slate-300 flex items-center gap-1">
+                <CloudRain className="w-3.5 h-3.5 text-cyan-400" />
+                <b>{liveWeather.weather_description || 'Clear Sky'}</b>
+              </span>
+              <span className="text-emerald-400 font-mono text-[10px] font-semibold bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800">
+                Live API 200 OK
+              </span>
+            </div>
+
+            <div className="grid grid-cols-3 gap-1.5 text-center font-mono text-[10px]">
+              <div className="bg-slate-900/80 p-1 rounded border border-slate-800">
+                <span className="text-slate-400 text-[9px] block">TEMP</span>
+                <span className="text-amber-300 font-bold">{liveWeather.temperature_c}°C</span>
+              </div>
+              <div className="bg-slate-900/80 p-1 rounded border border-slate-800">
+                <span className="text-slate-400 text-[9px] block">HUMIDITY</span>
+                <span className="text-cyan-300 font-bold">{liveWeather.humidity_pct}%</span>
+              </div>
+              <div className="bg-slate-900/80 p-1 rounded border border-slate-800">
+                <span className="text-slate-400 text-[9px] block">LIVE RAIN</span>
+                <span className="text-emerald-300 font-bold">{liveWeather.precipitation_mmh} mm/h</span>
+              </div>
+            </div>
+
+            {/* Live Rain Simulation Injector for Presentation */}
+            <div className="flex flex-col gap-1 pt-1 border-t border-slate-800/80">
+              <span className="text-[10px] text-slate-400">Live Dynamic Rain Injection (Test Active Storm):</span>
+              <div className="grid grid-cols-4 gap-1">
+                <button
+                  onClick={() => onSyncLiveWeather(0.0)}
+                  className="py-1 px-1 rounded bg-slate-800 hover:bg-slate-700 text-[9px] text-slate-300 font-mono transition"
+                >
+                  Dry (0mm)
+                </button>
+                <button
+                  onClick={() => onSyncLiveWeather(45.0)}
+                  className="py-1 px-1 rounded bg-sky-950 hover:bg-sky-900 border border-sky-800 text-[9px] text-sky-200 font-mono transition"
+                >
+                  45mm/h
+                </button>
+                <button
+                  onClick={() => onSyncLiveWeather(85.0)}
+                  className="py-1 px-1 rounded bg-cyan-950 hover:bg-cyan-900 border border-cyan-800 text-[9px] text-cyan-200 font-mono transition"
+                >
+                  85mm/h
+                </button>
+                <button
+                  onClick={() => onSyncLiveWeather(130.0)}
+                  className="py-1 px-1 rounded bg-rose-950 hover:bg-rose-900 border border-rose-800 text-[9px] text-rose-200 font-mono transition"
+                >
+                  Cloudburst
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="text-[10px] text-slate-400 italic">Connecting to Open-Meteo satellite feed...</div>
+        )}
       </div>
 
       {/* Operating Mode Selector (Strict Mode Separation) */}

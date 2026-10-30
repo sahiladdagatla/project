@@ -21,6 +21,7 @@ def test_scenarios_endpoint():
     scenario_ids = [s["scenario_id"] for s in data]
     assert "thane_exploratory_pluvial_95mm" in scenario_ids
     assert "thane_cloudburst_flash_surge" in scenario_ids
+    assert "thane_live_dynamic" in scenario_ids
 
 
 def test_network_and_facilities_geojson():
@@ -104,3 +105,20 @@ def test_experiment_results_endpoint():
     data = resp.json()
     assert "benchmark" in data
     assert "ablations" in data
+
+
+def test_live_weather_endpoints():
+    resp = client.get("/api/weather/live")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert "temperature_c" in data
+    assert "humidity_pct" in data
+    assert "weather_description" in data
+    assert data["location"] == "Thane City, Maharashtra, India"
+
+    resp_sync = client.post("/api/weather/sync", json={"rain_override_mm": 55.0})
+    assert resp_sync.status_code == 200
+    sync_data = resp_sync.json()
+    assert sync_data["status"] == "success"
+    assert sync_data["scenario"]["scenario_id"] == "thane_live_dynamic"
+    assert sync_data["scenario"]["total_rainfall_mm"] == 55.0
