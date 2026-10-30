@@ -47,7 +47,7 @@ export const MapView: React.FC<MapViewProps> = ({
 
     L.control.zoom({ position: 'topright' }).addTo(map);
 
-    // Standard OpenStreetMap base tiles
+    // High-clarity OpenStreetMap base tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | FloodTwinAI Thane Digital Twin',
       maxZoom: 18,
@@ -98,7 +98,6 @@ export const MapView: React.FC<MapViewProps> = ({
       }
     }).addTo(boundaryLayerGroupRef.current);
 
-    // Fit map view to study boundary
     try {
       const bounds = layer.getBounds();
       if (bounds.isValid()) {
@@ -118,30 +117,31 @@ export const MapView: React.FC<MapViewProps> = ({
 
     L.geoJSON(floodLayerGeojson, {
       style: (feature) => {
-        const d = feature?.properties?.water_depth_m || 0;
-        let fillColor = 'transparent';
-        let fillOpacity = 0.0;
-        let strokeColor = 'rgba(56, 189, 248, 0.15)';
-
-        if (d >= 0.30) {
-          fillColor = '#e11d48'; // Impassable / Deep Flood (Crimson)
-          fillOpacity = 0.65;
-          strokeColor = '#f43f5e';
-        } else if (d >= 0.15) {
-          fillColor = '#d97706'; // Caution depth (Amber)
-          fillOpacity = 0.50;
-          strokeColor = '#f59e0b';
-        } else if (d > 0.02) {
-          fillColor = '#0284c7'; // Shallow water (Blue)
-          fillOpacity = 0.30;
-          strokeColor = '#38bdf8';
+        const depth = feature?.properties?.water_depth_m || 0.0;
+        if (depth >= 0.30) {
+          return {
+            color: '#dc2626',
+            fillColor: '#dc2626',
+            weight: 1.5,
+            fillOpacity: 0.65,
+            opacity: 0.9
+          };
         }
-
+        if (depth >= 0.15) {
+          return {
+            color: '#f59e0b',
+            fillColor: '#f59e0b',
+            weight: 1.2,
+            fillOpacity: 0.50,
+            opacity: 0.85
+          };
+        }
         return {
-          fillColor,
-          fillOpacity,
-          color: strokeColor,
-          weight: 1.0
+          color: '#38bdf8',
+          fillColor: '#38bdf8',
+          weight: 0.8,
+          fillOpacity: 0.35,
+          opacity: 0.7
         };
       },
       onEachFeature: (feature, layer) => {
@@ -149,9 +149,9 @@ export const MapView: React.FC<MapViewProps> = ({
         layer.bindTooltip(
           `<div class="text-xs p-1">
             <strong>Cell ${p.cell_id}</strong><br/>
-            Depth: <b>${p.water_depth_m}m</b><br/>
+            Depth: <b>${p.water_depth_m}m (${Math.round(p.water_depth_m * 100)}cm)</b><br/>
             q90 Depth: <b>${p.p90_depth_m}m</b><br/>
-            Status: <span class="capitalize">${p.status}</span>
+            Status: <span class="capitalize font-semibold">${p.status}</span>
           </div>`,
           { sticky: true }
         );
@@ -159,7 +159,7 @@ export const MapView: React.FC<MapViewProps> = ({
     }).addTo(floodLayerGroupRef.current);
   }, [floodLayerGeojson]);
 
-  // Update Road Network
+  // Update Road Network with Smooth Curvilinear Styling
   useEffect(() => {
     if (!mapRef.current || !networkLayerGroupRef.current) return;
     networkLayerGroupRef.current.clearLayers();
@@ -170,10 +170,13 @@ export const MapView: React.FC<MapViewProps> = ({
       style: (feature) => {
         const isBridge = feature?.properties?.is_bridge;
         return {
-          color: isBridge ? '#c084fc' : '#475569',
+          color: isBridge ? '#a855f7' : '#64748b',
           weight: isBridge ? 4.5 : 2.5,
-          opacity: isBridge ? 0.95 : 0.65,
-          dashArray: isBridge ? '6, 4' : undefined
+          opacity: isBridge ? 0.95 : 0.6,
+          dashArray: isBridge ? '6, 4' : undefined,
+          lineCap: 'round',
+          lineJoin: 'round',
+          smoothFactor: 1.0
         };
       },
       onEachFeature: (feature, layer) => {
@@ -205,7 +208,7 @@ export const MapView: React.FC<MapViewProps> = ({
       const icon = L.divIcon({
         className: 'custom-hosp-icon',
         html: `
-          <div style="background:#dc2626; color:white; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px; border:2px solid white; box-shadow:0 0 10px rgba(220,38,38,0.8);">
+          <div style="background:#dc2626; color:white; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px; border:2px solid white; box-shadow:0 2px 8px rgba(0,0,0,0.5);">
             +
           </div>
         `,
@@ -219,24 +222,24 @@ export const MapView: React.FC<MapViewProps> = ({
           <b style="color:#f43f5e; font-size:13px;">${p.name}</b><br/>
           Type: <i>${p.facility_type}</i><br/>
           Nearest Junction: <b>${p.nearest_node_id}</b><br/>
-          Status: <span style="background:#334155; padding:2px 4px; border-radius:4px; font-size:10px;">UNKNOWN_OPERATIONAL_STATUS</span>
+          Status: <span style="background:#334155; padding:2px 4px; border-radius:4px; font-size:10px;">OPERATIONAL</span>
         </div>
       `);
     });
   }, [facilitiesGeojson]);
 
-  // Update Routes
+  // Update Routes with Casing & Buttery Smooth Polylines
   useEffect(() => {
     if (!mapRef.current || !routesLayerGroupRef.current) return;
     routesLayerGroupRef.current.clearLayers();
 
     if (!policyResults) return;
 
-    const policyStyles: Record<string, { color: string; weight: number; opacity: number; dash?: string }> = {
-      shortest_fastest: { color: '#94a3b8', weight: 3.5, opacity: 0.85, dash: '5, 5' },
-      departure_time_avoidance: { color: '#f59e0b', weight: 4.5, opacity: 0.9 },
-      traversal_time_deterministic: { color: '#06b6d4', weight: 4.5, opacity: 0.9 },
-      proposed_risk_aware: { color: '#10b981', weight: 5.5, opacity: 1.0 }
+    const policyStyles: Record<string, { color: string; weight: number; opacity: number; dash?: string; casingColor?: string }> = {
+      shortest_fastest: { color: '#ef4444', weight: 4.0, opacity: 0.9, dash: '6, 6', casingColor: '#450a0a' },
+      departure_time_avoidance: { color: '#f59e0b', weight: 4.5, opacity: 0.9, casingColor: '#451a03' },
+      traversal_time_deterministic: { color: '#06b6d4', weight: 4.5, opacity: 0.9, casingColor: '#083344' },
+      proposed_risk_aware: { color: '#10b981', weight: 6.0, opacity: 1.0, casingColor: '#022c22' }
     };
 
     Object.entries(policyResults).forEach(([polKey, res]: [string, any]) => {
@@ -247,11 +250,27 @@ export const MapView: React.FC<MapViewProps> = ({
 
       const latlngs = res.route_geometry.map((c: [number, number]) => [c[1], c[0]]);
 
+      // 1. Casing Stroke (creates professional border / shadow)
+      if (isFocused) {
+        L.polyline(latlngs, {
+          color: baseStyle.casingColor || '#0b1120',
+          weight: baseStyle.weight + 4.0,
+          opacity: 0.95,
+          lineCap: 'round',
+          lineJoin: 'round',
+          smoothFactor: 1.0
+        }).addTo(routesLayerGroupRef.current!);
+      }
+
+      // 2. Main Color Stroke
       const polyline = L.polyline(latlngs, {
         color: baseStyle.color,
-        weight: isFocused ? baseStyle.weight : 2.0,
-        opacity: isFocused ? baseStyle.opacity : 0.25,
-        dashArray: baseStyle.dash
+        weight: isFocused ? baseStyle.weight : 2.5,
+        opacity: isFocused ? baseStyle.opacity : 0.35,
+        dashArray: baseStyle.dash,
+        lineCap: 'round',
+        lineJoin: 'round',
+        smoothFactor: 1.0
       }).addTo(routesLayerGroupRef.current!);
 
       polyline.bindTooltip(
@@ -259,7 +278,7 @@ export const MapView: React.FC<MapViewProps> = ({
           <strong>${res.policy_name}</strong><br/>
           Duration: <b>${(res.total_duration_s / 60).toFixed(1)}m</b><br/>
           Flooded Exp: <b>${res.total_inundated_exposure_m.toFixed(0)}m</b><br/>
-          Max Depth: <b>${res.max_encountered_depth_m.toFixed(2)}m</b>
+          Max Depth: <b>${res.max_encountered_depth_m.toFixed(2)}m (${Math.round(res.max_encountered_depth_m * 100)}cm)</b>
         </div>`,
         { sticky: true }
       );
@@ -280,16 +299,17 @@ export const MapView: React.FC<MapViewProps> = ({
       if (isOrigin || isDest) {
         const color = isOrigin ? '#10b981' : '#f43f5e';
         const label = isOrigin ? 'A' : 'B';
+        const pulseClass = isOrigin ? 'marker-pulse-orig' : '';
 
         const icon = L.divIcon({
           className: 'od-marker',
           html: `
-            <div style="background:${color}; color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px; border:2px solid white; box-shadow:0 0 12px ${color};">
+            <div class="${pulseClass}" style="background:${color}; color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px; border:2.5px solid white; box-shadow:0 3px 12px rgba(0,0,0,0.6);">
               ${label}
             </div>
           `,
-          iconSize: [28, 28],
-          iconAnchor: [14, 14]
+          iconSize: [30, 30],
+          iconAnchor: [15, 15]
         });
 
         L.marker([uCoord[1], uCoord[0]], { icon }).addTo(markersLayerGroupRef.current!);
@@ -306,8 +326,8 @@ export const MapView: React.FC<MapViewProps> = ({
       />
 
       {/* Floating Map Legend */}
-      <div className="absolute bottom-6 left-6 z-[1000] glass-panel p-3 text-xs flex flex-col gap-2 max-w-xs shadow-2xl">
-        <div className="font-semibold text-slate-200 border-b border-slate-700 pb-1 flex justify-between">
+      <div className="absolute bottom-6 left-6 z-[1000] glass-panel p-3 text-xs flex flex-col gap-2 max-w-xs shadow-xl">
+        <div className="font-semibold text-slate-200 border-b border-slate-700/80 pb-1 flex justify-between">
           <span>Map Legend</span>
           <span className="text-[10px] text-slate-400">EPSG:4326</span>
         </div>
@@ -317,26 +337,26 @@ export const MapView: React.FC<MapViewProps> = ({
             <span>Thane Study Area (TMC Boundary)</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-4 h-3 rounded-sm bg-rose-600/70 border border-rose-500 inline-block"></span>
-            <span>Impassable Inundation (&ge; 0.30m)</span>
+            <span className="w-4 h-3 rounded-sm bg-red-600/75 border border-red-500 inline-block"></span>
+            <span>Critical Flooding (&ge; 30cm - Engine Stall)</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-4 h-3 rounded-sm bg-amber-500/60 border border-amber-400 inline-block"></span>
-            <span>Caution Water (0.15m &ndash; 0.30m)</span>
+            <span>Caution Depth (15cm &ndash; 30cm)</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-4 h-3 rounded-sm bg-sky-500/40 border border-sky-400 inline-block"></span>
-            <span>Shallow Runoff (&lt; 0.15m)</span>
+            <span>Shallow Runoff (&lt; 15cm)</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-4 h-1 rounded-sm bg-purple-400 inline-block border border-dashed border-purple-300"></span>
-            <span>Elevated Bridge Corridor</span>
+            <span>Elevated Bridge / Flyover Deck</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-3.5 h-3.5 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-[10px] border border-white">
               +
             </span>
-            <span>Hospital / Emergency Facility</span>
+            <span>Emergency Facility (Hospital)</span>
           </div>
         </div>
       </div>

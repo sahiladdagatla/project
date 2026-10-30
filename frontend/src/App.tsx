@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { MapView } from './components/MapView';
 import { ControlPanel } from './components/ControlPanel';
 import { RouteComparisonPanel } from './components/RouteComparisonPanel';
+import { ExplainableAIPanel } from './components/ExplainableAIPanel';
 import { AccessibilityPanel } from './components/AccessibilityPanel';
 import { SatellitePanel } from './components/SatellitePanel';
 import { ResearchDashboard } from './components/ResearchDashboard';
+import { Sparkles, AlertTriangle, ShieldCheck } from 'lucide-react';
 
 export const App: React.FC = () => {
   const [operatingMode, setOperatingMode] = useState<string>('exploratory_thane_scenario');
@@ -24,7 +26,7 @@ export const App: React.FC = () => {
 
   const [comparisonData, setComparisonData] = useState<any>(null);
   const [activePolicy, setActivePolicy] = useState<string>('all');
-  const [activeTab, setActiveTab] = useState<'routes' | 'accessibility' | 'satellite' | 'research'>('routes');
+  const [activeTab, setActiveTab] = useState<'routes' | 'xai' | 'accessibility' | 'satellite' | 'research'>('routes');
   const [isRoutingLoading, setIsRoutingLoading] = useState<boolean>(false);
 
   // Live Open-Meteo Weather State
@@ -154,15 +156,12 @@ export const App: React.FC = () => {
         if (data.status === 'success') {
           setLiveWeather(data.weather);
           setSelectedScenarioId('thane_live_dynamic');
-          // Re-fetch scenarios
           fetch('/api/scenarios')
             .then(res => res.json())
             .then(scList => setScenarios(scList));
-          // Refresh flood layer
           fetch(`/api/flood-layer?scenario_id=thane_live_dynamic&timestep_idx=${currentTimestepIdx}`)
             .then(res => res.json())
             .then(flData => setFloodLayerGeojson(flData));
-          // Re-run routing comparison
           handleRunComparison('thane_live_dynamic');
         }
       })
@@ -214,11 +213,40 @@ export const App: React.FC = () => {
         />
       </div>
 
-      {/* Center: Interactive Map */}
+      {/* Center: Interactive Map with Problem & Solution Header Banner */}
       <div
         className="flex-1 h-full relative z-0"
         style={{ flex: 1, height: '100%', position: 'relative' }}
       >
+        {/* Top Problem vs Solution Civic Twin Header Banner */}
+        <div className="absolute top-3 left-4 right-4 z-[1000] pointer-events-auto bg-slate-900/95 border border-slate-700/80 rounded-xl px-4 py-2.5 flex items-center justify-between shadow-2xl backdrop-blur-md">
+          <div className="flex items-center gap-3 overflow-hidden text-ellipsis whitespace-nowrap">
+            <div className="flex items-center gap-1.5 text-xs text-rose-300 font-medium">
+              <AlertTriangle className="w-4 h-4 text-rose-400 flex-shrink-0" />
+              <span><b>Problem:</b> Standard GPS leads vehicles into rising flood traps.</span>
+            </div>
+            <span className="text-slate-600 font-bold hidden sm:inline">&rarr;</span>
+            <div className="flex items-center gap-1.5 text-xs text-emerald-300 font-medium hidden md:flex">
+              <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+              <span><b>Solution:</b> FloodTwinAI routes via arrival-time water depth & elevated flyovers.</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <button
+              onClick={() => setActiveTab('xai')}
+              className={`text-[11px] font-bold px-3 py-1 rounded-md transition flex items-center gap-1.5 shadow-sm border ${
+                activeTab === 'xai'
+                  ? 'bg-emerald-500 text-slate-950 border-emerald-400 font-bold'
+                  : 'bg-emerald-950/80 hover:bg-emerald-900 text-emerald-400 border-emerald-700'
+              }`}
+              title="Inspect Why this Route was Selected"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Why this Path? (XAI)</span>
+            </button>
+          </div>
+        </div>
+
         <MapView
           networkGeojson={networkGeojson}
           facilitiesGeojson={facilitiesGeojson}
@@ -244,6 +272,15 @@ export const App: React.FC = () => {
         <div className="glass-panel h-full p-3 flex flex-col" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
           {activeTab === 'routes' && (
             <RouteComparisonPanel
+              comparisonData={comparisonData}
+              activePolicy={activePolicy}
+              setActivePolicy={setActivePolicy}
+              onViewExplanation={() => setActiveTab('xai')}
+            />
+          )}
+
+          {activeTab === 'xai' && (
+            <ExplainableAIPanel
               comparisonData={comparisonData}
               activePolicy={activePolicy}
               setActivePolicy={setActivePolicy}

@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
-/* Modern Dark Geospatial Digital Twin Design System */
+/* Professional Civic Transportation GIS Design System */
 :root {
-  --bg-primary: #0a0f1d;
+  --bg-primary: #0b1120;
   --bg-secondary: #0f172a;
-  --bg-panel: rgba(15, 23, 42, 0.85);
-  --bg-card: rgba(30, 41, 59, 0.7);
-  --border-subtle: rgba(51, 65, 85, 0.6);
-  --border-focus: rgba(56, 189, 248, 0.5);
+  --bg-panel: rgba(15, 23, 42, 0.95);
+  --bg-card: rgba(30, 41, 59, 0.85);
+  --border-subtle: #334155;
+  --border-focus: #38bdf8;
   --accent-blue: #38bdf8;
   --accent-cyan: #06b6d4;
   --accent-emerald: #10b981;
@@ -17,7 +17,7 @@
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -32,6 +32,7 @@ body {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+  -webkit-font-smoothing: antialiased;
 }
 
 #root {
@@ -41,18 +42,16 @@ body {
   flex-direction: column;
 }
 
-/* Glassmorphism Panels */
+/* Crisp Engineering GIS Panels */
 .glass-panel {
   background: var(--bg-panel);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .glass-card {
   background: var(--bg-card);
-  backdrop-filter: blur(8px);
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
 }
@@ -73,14 +72,15 @@ body {
   background: rgba(148, 163, 184, 0.8);
 }
 
-/* Leaflet Dark Customizations */
+/* Clean Professional Map Styles (No Cyberpunk Inversion) */
 .leaflet-container {
-  background: #090d16 !important;
+  background: #0f172a !important;
   font-family: inherit !important;
 }
 
 .leaflet-tile {
-  filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+  /* Clean contrast enhancement without distortion */
+  filter: brightness(0.92) contrast(1.08);
 }
 
 .leaflet-popup-content-wrapper {
@@ -88,6 +88,7 @@ body {
   color: #f8fafc !important;
   border: 1px solid #334155 !important;
   border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
 }
 
 .leaflet-popup-tip {
@@ -99,15 +100,26 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 2px 8px;
-  border-radius: 9999px;
+  border-radius: 6px;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.025em;
 }
 
-.badge-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
-.badge-green { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
-.badge-amber { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
-.badge-rose { background: rgba(244, 63, 94, 0.15); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.3); }
-.badge-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
-.badge-slate { background: rgba(100, 116, 139, 0.2); color: #cbd5e1; border: 1px solid rgba(100, 116, 139, 0.3); }
+.badge-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); }
+.badge-green { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4); }
+.badge-amber { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); }
+.badge-rose { background: rgba(244, 63, 94, 0.15); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.4); }
+.badge-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); }
+.badge-slate { background: rgba(100, 116, 139, 0.2); color: #cbd5e1; border: 1px solid rgba(100, 116, 139, 0.4); }
+
+/* Smooth Pulse Animation for OD Markers */
+@keyframes markerPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.marker-pulse-orig {
+  animation: markerPulse 2.2s infinite ease-in-out;
+}

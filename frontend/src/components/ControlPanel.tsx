@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Play, Pause, RotateCcw, Activity, Navigation, Satellite, FileText,
+  Play, Pause, RotateCcw, Activity, Navigation, Satellite, FileText, Brain,
   CloudRain, RefreshCw, Thermometer, Droplets, Wind, Radio
 } from 'lucide-react';
 
@@ -19,8 +19,8 @@ interface ControlPanelProps {
   destNodeId: string;
   setDestNodeId: (id: string) => void;
   places?: any[];
-  activeTab: 'routes' | 'accessibility' | 'satellite' | 'research';
-  setActiveTab: (tab: 'routes' | 'accessibility' | 'satellite' | 'research') => void;
+  activeTab: 'routes' | 'xai' | 'accessibility' | 'satellite' | 'research';
+  setActiveTab: (tab: 'routes' | 'xai' | 'accessibility' | 'satellite' | 'research') => void;
   onRunComparison: () => void;
   isRoutingLoading: boolean;
   liveWeather: any;
@@ -223,50 +223,66 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
       </div>
 
       {/* Navigation Tabs */}
-      <div className="grid grid-cols-4 gap-1 border-b border-slate-800 pb-2 pt-1">
+      <div className="grid grid-cols-5 gap-1 border-b border-slate-800 pb-2 pt-1">
         <button
           onClick={() => setActiveTab('routes')}
-          className={`py-1.5 px-2 rounded-md text-xs font-medium flex items-center justify-center gap-1.5 transition ${
+          className={`py-1.5 px-1 rounded-md text-[11px] font-medium flex flex-col items-center justify-center gap-1 transition ${
             activeTab === 'routes'
-              ? 'bg-slate-800 text-cyan-400 border border-slate-700'
+              ? 'bg-slate-800 text-cyan-400 border border-slate-700 font-semibold'
               : 'text-slate-400 hover:text-slate-200'
           }`}
+          title="Compare 4 Routing Policies"
         >
           <Navigation className="w-3.5 h-3.5" />
-          Routes
+          <span>Routes</span>
+        </button>
+        <button
+          onClick={() => setActiveTab('xai')}
+          className={`py-1.5 px-1 rounded-md text-[11px] font-medium flex flex-col items-center justify-center gap-1 transition ${
+            activeTab === 'xai'
+              ? 'bg-emerald-950/80 text-emerald-400 border border-emerald-700/80 font-semibold'
+              : 'text-slate-400 hover:text-slate-200'
+          }`}
+          title="Explainable AI (Why this Path?)"
+        >
+          <Brain className="w-3.5 h-3.5" />
+          <span>Why Path?</span>
         </button>
         <button
           onClick={() => setActiveTab('accessibility')}
-          className={`py-1.5 px-2 rounded-md text-xs font-medium flex items-center justify-center gap-1.5 transition ${
+          className={`py-1.5 px-1 rounded-md text-[11px] font-medium flex flex-col items-center justify-center gap-1 transition ${
             activeTab === 'accessibility'
-              ? 'bg-slate-800 text-cyan-400 border border-slate-700'
+              ? 'bg-slate-800 text-cyan-400 border border-slate-700 font-semibold'
               : 'text-slate-400 hover:text-slate-200'
           }`}
+          title="Hospital Accessibility & Isolations"
         >
           <Activity className="w-3.5 h-3.5" />
-          Facilities
+          <span>Facilities</span>
         </button>
         <button
           onClick={() => setActiveTab('satellite')}
-          className={`py-1.5 px-2 rounded-md text-xs font-medium flex items-center justify-center gap-1.5 transition ${
+          className={`py-1.5 px-1 rounded-md text-[11px] font-medium flex flex-col items-center justify-center gap-1 transition ${
             activeTab === 'satellite'
-              ? 'bg-slate-800 text-cyan-400 border border-slate-700'
+              ? 'bg-slate-800 text-cyan-400 border border-slate-700 font-semibold'
               : 'text-slate-400 hover:text-slate-200'
           }`}
+          title="Sentinel-1 SAR Satellite Observation"
         >
           <Satellite className="w-3.5 h-3.5" />
-          SAR Map
+          <span>SAR Map</span>
         </button>
         <button
           onClick={() => setActiveTab('research')}
-          className={`py-1.5 px-2 rounded-md text-xs font-medium flex items-center justify-center gap-1.5 transition ${
+          className={`py-1.5 px-1 rounded-md text-[11px] font-medium flex flex-col items-center justify-center gap-1 transition ${
             activeTab === 'research'
-              ? 'bg-slate-800 text-cyan-400 border border-slate-700'
+              ? 'bg-slate-800 text-cyan-400 border border-slate-700 font-semibold'
               : 'text-slate-400 hover:text-slate-200'
           }`}
+          title="Research Benchmarks & Validation Metrics"
         >
           <FileText className="w-3.5 h-3.5" />
-          Research
+          <span>Research</span>
         </button>
       </div>
 

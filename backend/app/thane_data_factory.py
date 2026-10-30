@@ -25,7 +25,7 @@ import numpy as np
 from backend.app.config import BENCHMARK_DATA_DIR, FIXTURES_DATA_DIR, settings
 from backend.app.core.road_network import RoadNetwork, RoadNode, RoadEdge
 from backend.app.core.flood_grid import FloodGridScenario, FloodCell, CellTimeStepState
-from backend.app.core.spatial import haversine_distance_m
+from backend.app.core.spatial import haversine_distance_m, linestring_length_m, generate_curved_road_geometry
 from backend.app.accessibility.facility_analysis import Facility
 
 
@@ -214,13 +214,54 @@ def generate_thane_catchment() -> Tuple[RoadNetwork, Dict[str, FloodGridScenario
         ("KALWA_CENTER", "CSMH_KALWA_JCT", "Belapur Road (Kalwa)", "primary", 40.0, False, None),
         ("CSMH_KALWA_JCT", "KALWA_CENTER", "Belapur Road (Kalwa)", "primary", 40.0, False, None)
     ]
+    # Authentic Thane Corridor via-points for smooth, realistic curvature
+    corridor_vias = {
+        ("MULUND_TOLL", "TEEN_HATH_NAKA"): [(72.9658, 19.1820)],
+        ("TEEN_HATH_NAKA", "NITIN_JUNCTION"): [(72.9640, 19.1940)],
+        ("MULUND_TOLL", "TEEN_HATH_FLYOVR"): [(72.9658, 19.1820)],
+        ("TEEN_HATH_FLYOVR", "NITIN_FLYOVR"): [(72.9640, 19.1940)],
+        ("NITIN_JUNCTION", "CADBURY_JUNCTION"): [(72.9666, 19.2020)],
+        ("NITIN_FLYOVR", "CADBURY_JUNCTION"): [(72.9666, 19.2020)],
+        ("CADBURY_JUNCTION", "MAJIWADA_JUNCTION"): [(72.9735, 19.2085), (72.9760, 19.2110)],
+        ("CADBURY_JUNCTION", "MAJIWADA_FLYOVR"): [(72.9735, 19.2085), (72.9760, 19.2110)],
+        ("MAJIWADA_FLYOVR", "MANPADA"): [(72.9770, 19.2220)],
+        ("MAJIWADA_JUNCTION", "KAPURBAWDI"): [(72.9782, 19.2136)],
+        ("KAPURBAWDI", "MANPADA"): [(72.9760, 19.2230)],
+        ("MANPADA", "BRAHMAND"): [(72.9728, 19.2370)],
+        ("BRAHMAND", "PATLIPADA"): [(72.9710, 19.2460)],
+        ("PATLIPADA", "HIRANANDANI_EST"): [(72.9760, 19.2520)],
+        ("PATLIPADA", "WAGHBIL"): [(72.9702, 19.2550)],
+        ("WAGHBIL", "KASARVADAVALI"): [(72.9695, 19.2655)],
+        ("KASARVADAVALI", "OVALA"): [(72.9660, 19.2740)],
+        ("OVALA", "GAIMUKH"): [(72.9550, 19.2840), (72.9450, 19.2900)],
+        ("CADBURY_JUNCTION", "VARTAK_NAGAR"): [(72.9655, 19.2100)],
+        ("VARTAK_NAGAR", "UPVAN_LAKE"): [(72.9590, 19.2185)],
+        ("KAPURBAWDI", "VARTAK_NAGAR"): [(72.9700, 19.2150)],
+        ("TH_STATION", "NAUPADA"): [(72.9735, 19.1855)],
+        ("NAUPADA", "MASUNDA_LAKE"): [(72.9755, 19.1895)],
+        ("MASUNDA_LAKE", "COURT_NAKA"): [(72.9760, 19.1950), (72.9765, 19.1962)],
+        ("KALWA_BRIDGE_W", "KALWA_BRIDGE_E"): [(72.9875, 19.1956), (72.9905, 19.1958)],
+        ("TH_STATION", "KOPRI"): [(72.9715, 19.1808)],
+        ("NAUPADA", "VANDANA_CINEMA"): [(72.9724, 19.1868)],
+        ("VANDANA_CINEMA", "TEEN_HATH_NAKA"): [(72.9660, 19.1878)],
+        ("WAGLE_ESTATE", "TEEN_HATH_NAKA"): [(72.9570, 19.1935)]
+    }
 
     edge_counter = 1
     for u, v, road_name, hway, speed, is_brg, deck_elev in edges_meta:
         u_node = net.nodes[u]
         v_node = net.nodes[v]
-        coords = [(u_node.lon, u_node.lat), (v_node.lon, v_node.lat)]
-        length_m = haversine_distance_m(u_node.lat, u_node.lon, v_node.lat, v_node.lon)
+        vias = corridor_vias.get((u, v))
+        if not vias and (v, u) in corridor_vias:
+            vias = list(reversed(corridor_vias[(v, u)]))
+
+        coords = generate_curved_road_geometry(
+            u_node.lon, u_node.lat, v_node.lon, v_node.lat,
+            via_points=vias,
+            num_samples=7,
+            deflection_ratio=0.03 if not vias else 0.0
+        )
+        length_m = linestring_length_m(coords)
         free_flow_s = length_m / (speed * 1000.0 / 3600.0)
 
         eid = f"TH_E{edge_counter:03d}"
